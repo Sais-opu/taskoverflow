@@ -128,7 +128,7 @@ const Register = () => {
                 transition: Bounce,
             });
 
-            navigate("/home");
+            navigate("/");
         } catch (error) {
             toast.error("Error creating user. Please try again.", {
                 position: "top-center",
@@ -257,19 +257,7 @@ const Register = () => {
                 </div>
             </form>
 
-            <ToastContainer
-                position="top-center"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="light"
-                transition="bounce"
-            />
+            
         </div>
     );
 };

@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/authProvider";
-import logo from '../../assets/logo.jpg';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
     const { user, signOutUser } = useContext(AuthContext);
@@ -21,7 +21,7 @@ const Navbar = () => {
     const links = (
         <>
             <li><NavLink to="/" className={({ isActive }) => isActive ? "bg-purple-800 text-white px-4 py-2 rounded-md" : "hover:bg-indigo-500 hover:underline px-4 py-2 rounded-md"}>Home</NavLink></li>
-            <li><NavLink to="/marathon" className={({ isActive }) => isActive ? "bg-purple-800 text-white px-4 py-2 rounded-md" : "hover:bg-indigo-500 hover:underline px-4 py-2 rounded-md"}>Marathons</NavLink></li>
+            <li><NavLink to="/alltask" className={({ isActive }) => isActive ? "bg-purple-800 text-white px-4 py-2 rounded-md" : "hover:bg-indigo-500 hover:underline px-4 py-2 rounded-md"}>Manage Your Task</NavLink></li>
             
             
             {/* {user && user.displayName && (
@@ -59,7 +59,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <NavLink to="/" className="flex items-center gap-2 btn btn-ghost normal-case text-lg md:text-xl font-bold">
                         <img className="w-10 h-10" src={logo} alt="logo" />
-                        <p className="hidden md:block">Marathon Manage</p>
+                        <p className="hidden md:block">TaskOverFlow</p>
                     </NavLink>
                 </div>
 
@@ -71,9 +71,9 @@ const Navbar = () => {
                 {/* Navbar End: Buttons */}
                 <div className="navbar-end flex items-center gap-4">
                     {/* Dark Mode Toggle */}
-                    <button onClick={toggleTheme} className="btn btn-outline px-3 py-1">
+                    {/* <button onClick={toggleTheme} className="btn btn-outline px-3 py-1">
                         {theme === "light" ? "🌙 Dark" : "☀️ Light"}
-                    </button>
+                    </button> */}
 
                     {/* User Avatar */}
                     {user && user.photoURL && (
@@ -92,8 +92,8 @@ const Navbar = () => {
                         </button>
                     ) : (
                         <div className="flex gap-2">
-                            <NavLink to="/register" className="btn bg-purple-900 text-white px-3 py-1">Sign Up</NavLink>
-                            <NavLink to="/login" className="btn bg-purple-900 text-white px-3 py-1">Log In</NavLink>
+                            {/* <NavLink to="/register" className="btn bg-purple-900 text-white px-3 py-1">Sign Up</NavLink>
+                            <NavLink to="/login" className="btn bg-purple-900 text-white px-3 py-1">Log In</NavLink> */}
                         </div>
                     )}
                 </div>
