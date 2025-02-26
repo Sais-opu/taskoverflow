@@ -9,14 +9,14 @@ const Navbar = () => {
     // Get theme from localStorage or default to light
     const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
-    useEffect(() => {
-        document.documentElement.setAttribute("data-theme", theme);
-        localStorage.setItem("theme", theme);
-    }, [theme]);
+    // useEffect(() => {
+    //     document.documentElement.setAttribute("data-theme", theme);
+    //     localStorage.setItem("theme", theme);
+    // }, [theme]);
 
-    const toggleTheme = () => {
-        setTheme(theme === "light" ? "dark" : "light");
-    };
+    // const toggleTheme = () => {
+    //     setTheme(theme === "light" ? "dark" : "light");
+    // };
 
     const links = (
         <>

@@ -60,7 +60,7 @@ const AddTask = () => {
     };
 
     return (
-        <div className="max-w-4xl bg-gray-700 mx-auto my-4 p-6 shadow-lg rounded-lg">
+        <div className="max-w-4xl bg-gradient-to-t from-purple-600 text-white to-indigo-700 mx-auto my-4 p-6 shadow-lg rounded-lg">
             <div className="text-center mb-6">
                 <h1 className="text-2xl font-bold ">Add Task</h1>
             </div>

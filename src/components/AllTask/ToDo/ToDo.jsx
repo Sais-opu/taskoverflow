@@ -48,13 +48,13 @@ const ToDo = () => {
     };
 
     return (
-        <div className='bg-gray-700 p-2 rounded-b-lg'>
-            <h1 className="text-2xl font-bold mb-4">To-Do Tasks</h1>
+        <div className='bg-gradient-to-t from-purple-600 text-white to-indigo-700 p-2 rounded-lg'>
+            <h1 className="text-3xl font-bold mb-4">To-Do Tasks</h1>
             <ul>
                 {tasks.map(task => (
                     <li key={task._id} className="bg-gray-400 p-2 m-2 rounded-md">
-                        <h3 className="text-xl">{task.title}</h3>
-                        <p>{task.description}</p>
+                        <h3 className="text-2xl font-bold">{task.title}</h3>
+                        <p className='text-black'>{task.description}</p>
                         <p><strong>Due Date:</strong> {task.dueDate}</p>
                         <div className="flex space-x-2 mt-2">
                             <button
