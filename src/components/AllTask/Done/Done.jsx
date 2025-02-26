@@ -48,18 +48,18 @@ const Done = () => {
     };
 
     return (
-        <div>
+        <div className='bg-gray-700 p-2 rounded-b-lg'>
             <h1 className="text-2xl font-bold mb-4">Done Tasks</h1>
             <ul>
                 {tasks.map(task => (
-                    <li key={task._id} className="bg-green-400 p-4 m-2 rounded-md">
+                    <li key={task._id} className="bg-gray-400 p-4 m-2 rounded-md">
                         <h3 className="text-xl">{task.title}</h3>
                         <p>{task.description}</p>
                         <p><strong>Due Date:</strong> {task.dueDate}</p>
                         <div className="flex space-x-2 mt-2">
                             <button
                                 onClick={() => openModal(task)}
-                                className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
+                                className="bg-purple-700 text-white p-2 rounded-md hover:bg-blue-600"
                             >
                                 Edit
                             </button>

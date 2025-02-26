@@ -22,9 +22,9 @@ const Navbar = () => {
         <>
             <li><NavLink to="/" className={({ isActive }) => isActive ? "bg-purple-800 text-white px-4 py-2 rounded-md" : "hover:bg-indigo-500 hover:underline px-4 py-2 rounded-md"}>Home</NavLink></li>
             <li><NavLink to="/alltask" className={({ isActive }) => isActive ? "bg-purple-800 text-white px-4 py-2 rounded-md" : "hover:bg-indigo-500 hover:underline px-4 py-2 rounded-md"}>Manage Your Task</NavLink></li>
-            <li><NavLink to="/todo" className={({ isActive }) => isActive ? "bg-purple-800 text-white px-4 py-2 rounded-md" : "hover:bg-indigo-500 hover:underline px-4 py-2 rounded-md"}>ToDo</NavLink></li>
+            {/* <li><NavLink to="/todo" className={({ isActive }) => isActive ? "bg-purple-800 text-white px-4 py-2 rounded-md" : "hover:bg-indigo-500 hover:underline px-4 py-2 rounded-md"}>ToDo</NavLink></li>
             <li><NavLink to="/inprogress" className={({ isActive }) => isActive ? "bg-purple-800 text-white px-4 py-2 rounded-md" : "hover:bg-indigo-500 hover:underline px-4 py-2 rounded-md"}>InProgress</NavLink></li>
-            <li><NavLink to="/done" className={({ isActive }) => isActive ? "bg-purple-800 text-white px-4 py-2 rounded-md" : "hover:bg-indigo-500 hover:underline px-4 py-2 rounded-md"}>Done</NavLink></li>
+            <li><NavLink to="/done" className={({ isActive }) => isActive ? "bg-purple-800 text-white px-4 py-2 rounded-md" : "hover:bg-indigo-500 hover:underline px-4 py-2 rounded-md"}>Done</NavLink></li> */}
 
 
             {/* {user && user.displayName && (
