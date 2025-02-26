@@ -10,22 +10,21 @@ const TaskList = () => {
     const [selectedTask, setSelectedTask] = useState(null);
     const categories = ['To Do', 'In Progress', 'Done'];
 
-    // Function to fetch tasks from the server
+
     const fetchTasks = () => {
-        fetch('http://localhost:5000/tasks')
+        fetch('https://task-management-server-weld.vercel.app/tasks')
             .then((response) => response.json())
             .then((data) => setTasks(data))
             .catch((error) => console.error('Error fetching tasks:', error));
     };
 
-    // Fetch tasks when the component mounts
     useEffect(() => {
         fetchTasks();
     }, []);
 
-    // Update task state after category change
+
     const handleTaskUpdate = () => {
-        fetchTasks(); // Refetch tasks after updating the category
+        fetchTasks();
     };
 
     const openModal = (task) => {
@@ -40,12 +39,12 @@ const TaskList = () => {
 
     return (
         <div>
-            {/* Render sections for each category */}
+
             <ToDo tasks={tasks.filter((task) => task.category === 'To Do')} openModal={openModal} />
             <InProgress tasks={tasks.filter((task) => task.category === 'In Progress')} openModal={openModal} />
             <Done tasks={tasks.filter((task) => task.category === 'Done')} openModal={openModal} />
 
-            {/* Task Modal */}
+
             {isModalOpen && (
                 <TaskModal
                     task={selectedTask}

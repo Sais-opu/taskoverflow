@@ -13,6 +13,7 @@ import ToDo from './components/AllTask/ToDo/ToDo.jsx'
 import Done from './components/AllTask/Done/Done.jsx'
 import InProgress from './components/AllTask/InProgress.jsx/InProgress.jsx'
 import { ToastContainer } from 'react-toastify'
+import PrivateRoute from './components/Private/PrivateRoute.jsx'
 ToastContainer
 const router = createBrowserRouter([
   {
@@ -30,15 +31,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/todo",
-        element: <ToDo></ToDo>,
+        element: <PrivateRoute><ToDo></ToDo></PrivateRoute> ,
       },
       {
         path: "/inprogress",
-        element: <InProgress></InProgress>,
+        element: <PrivateRoute><InProgress></InProgress></PrivateRoute>,
       },
       {
         path: "/done",
-        element: <Done></Done>,
+        element: <PrivateRoute><Done></Done></PrivateRoute>,
       },
       {
         path: "/login",

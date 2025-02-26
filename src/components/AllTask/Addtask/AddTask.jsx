@@ -8,7 +8,7 @@ const AddTask = () => {
     const [newTaskTitle, setNewTaskTitle] = useState('');
     const [newTaskDescription, setNewTaskDescription] = useState('');
     const [dueDate, setDueDate] = useState(null);
-    const [isSubmitting, setIsSubmitting] = useState(false); // New state to handle button disable
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleAddTask = (event) => {
         event.preventDefault();
@@ -31,13 +31,13 @@ const AddTask = () => {
         const newTask = {
             title: newTaskTitle,
             description: newTaskDescription,
-            dueDate: dueDate.toISOString().split('T')[0], // Format date as YYYY-MM-DD
-            category: "ToDo" // Default category
+            dueDate: dueDate.toISOString().split('T')[0], 
+            category: "ToDo" 
         };
 
-        setIsSubmitting(true); // Disable button during submission
+        setIsSubmitting(true); 
 
-        fetch('http://localhost:5000/tasks', {
+        fetch('https://task-management-server-weld.vercel.app/tasks', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -55,7 +55,7 @@ const AddTask = () => {
             toast.error('Failed to add task!');
         })
         .finally(() => {
-            setIsSubmitting(false); // Re-enable button after submission
+            setIsSubmitting(false); 
         });
     };
 
@@ -102,7 +102,7 @@ const AddTask = () => {
                     <button
                         type="submit"
                         className={`bg-indigo-400 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-md w-full sm:w-auto transition duration-300 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
-                        disabled={isSubmitting} // Disable button while submitting
+                        disabled={isSubmitting} 
                     >
                         {isSubmitting ? 'Adding...' : 'Add Task'}
                     </button>

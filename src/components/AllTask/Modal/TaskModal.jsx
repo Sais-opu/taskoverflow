@@ -19,7 +19,7 @@ const TaskModal = ({ task, onClose, categories, onUpdate }) => {
     };
 
     const handleSave = () => {
-        fetch(`http://localhost:5000/tasks/${updatedTask._id}`, {
+        fetch(`https://task-management-server-weld.vercel.app/tasks/${updatedTask._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

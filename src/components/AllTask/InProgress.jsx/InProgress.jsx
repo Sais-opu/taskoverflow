@@ -9,7 +9,7 @@ const InProgress = () => {
     const categories = ["ToDo", "InProgress", "Done"];
 
     useEffect(() => {
-        fetch('http://localhost:5000/tasks')
+        fetch('https://task-management-server-weld.vercel.app/tasks')
             .then(response => response.json())
             .then(data => {
                 setTasks(data.filter(task => task.category === "InProgress"));
@@ -35,7 +35,7 @@ const InProgress = () => {
     };
 
     const handleDeleteTask = (taskId) => {
-        fetch(`http://localhost:5000/tasks/${taskId}`, {
+        fetch(`https://task-management-server-weld.vercel.app/tasks/${taskId}`, {
             method: 'DELETE',
         })
             .then(() => {

@@ -6,7 +6,7 @@ const Tester = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch("http://localhost:5000/alldata")
+        fetch("https://task-management-server-weld.vercel.app/alldata")
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Failed to fetch data");
