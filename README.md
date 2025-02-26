@@ -15,7 +15,7 @@ A web-based task management application that allows users to create, manage, and
 
 Check out the live demo of the Task Management Application at:
 
-[**Live Demo**]([https://your-live-link.com](https://taskoverflow-6f0b0.web.app/))
+[**Live Demo**](https://taskoverflow-6f0b0.web.app/)
 
 ## Tech Stack
 
@@ -31,7 +31,6 @@ Check out the live demo of the Task Management Application at:
 - **Other**:
   - Drag-and-drop functionality (React DnD)
   - Real-time updates (Socket.io, MongoDB Change Streams)
-
 
 ## Installation
 
