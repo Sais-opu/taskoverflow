@@ -77,12 +77,12 @@ const TaskModal = ({ task, onClose, categories, onUpdate }) => {
 
                     {/* Category Dropdown */}
                     <div>
-                        <label className="block text-sm font-medium mb-1">Category:</label>
+                        <label className="block text-sm font-medium mb-1 text-black">Category:</label>
                         <select
                             name="category"
                             value={updatedTask.category}
                             onChange={handleCategoryChange}
-                            className="w-full p-2 border rounded-md focus:ring focus:ring-blue-300"
+                            className="w-full p-2 border rounded-md text-black focus:ring focus:ring-blue-300"
                         >
                             {categories.map((category) => (
                                 <option key={category} value={category}>
