@@ -10,10 +10,12 @@ A web-based task management application that allows users to create, manage, and
 - **Real-Time Updates**: View task updates in real-time with MongoDB and Express.js.
 - **Responsive UI**: The app is fully responsive and works seamlessly across devices.
 - **Task Persistence**: Tasks are stored in a database and persist between sessions.
-- **Optional Features**:
-  - Dark mode for a comfortable user experience.
-  - Task due dates for better task tracking.
-  - Activity log to track user actions.
+
+## Live Demo
+
+Check out the live demo of the Task Management Application at:
+
+[**Live Demo**](https://your-live-link.com)
 
 ## Tech Stack
 
@@ -30,11 +32,6 @@ A web-based task management application that allows users to create, manage, and
   - Drag-and-drop functionality (React DnD)
   - Real-time updates (Socket.io, MongoDB Change Streams)
 
-## Live Demo
-
-Check out the live demo of the Task Management Application at:
-
-[**Live Demo**](https://your-live-link.com)
 
 ## Installation
 
