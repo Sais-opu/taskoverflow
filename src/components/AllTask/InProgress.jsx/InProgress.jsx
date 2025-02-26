@@ -1,9 +1,24 @@
+import React from 'react';
 
+const InProgress = ({ tasks, openModal }) => {
+    // Check if 'tasks' is an array before filtering
+    const filteredTasks = Array.isArray(tasks) ? tasks.filter((task) => task.category === 'In Progress') : [];
 
-const InProgress = () => {
     return (
-        <div className="max-w-4xl bg-gray-700 mx-auto my-4 p-6 shadow-lg rounded-lg">
-            
+        <div>
+            <h2>In Progress</h2>
+            <div>
+                {filteredTasks.length > 0 ? (
+                    filteredTasks.map((task) => (
+                        <div key={task._id}>
+                            <h3>{task.title}</h3>
+                            <button onClick={() => openModal(task)}>Edit</button>
+                        </div>
+                    ))
+                ) : (
+                    <p>No tasks in progress</p>
+                )}
+            </div>
         </div>
     );
 };

@@ -9,6 +9,9 @@ import Home from './components/Home/Home.jsx'
 import ManageTask from './components/AllTask/ManageTask.jsx'
 import Login from './Login/Login.jsx'
 import Register from './Register/Register.jsx'
+import ToDo from './components/AllTask/ToDo/ToDo.jsx'
+import Done from './components/AllTask/Done/Done.jsx'
+import InProgress from './components/AllTask/InProgress.jsx/InProgress.jsx'
 import { ToastContainer } from 'react-toastify'
 ToastContainer
 const router = createBrowserRouter([
@@ -24,6 +27,18 @@ const router = createBrowserRouter([
       {
         path: "/alltask",
         element: <ManageTask></ManageTask>,
+      },
+      {
+        path: "/todo",
+        element: <ToDo></ToDo>,
+      },
+      {
+        path: "/inprogress",
+        element: <InProgress></InProgress>,
+      },
+      {
+        path: "/done",
+        element: <Done></Done>,
       },
       {
         path: "/login",

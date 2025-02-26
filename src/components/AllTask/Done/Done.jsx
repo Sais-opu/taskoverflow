@@ -1,9 +1,24 @@
 import React from 'react';
 
-const Done = () => {
+const Done = ({ tasks, openModal }) => {
+    // Ensure tasks is defined and default to an empty array if undefined
+    const taskList = tasks || [];
+
     return (
-        <div className="max-w-4xl bg-gray-700 mx-auto my-4 p-6 shadow-lg rounded-lg">
-            
+        <div>
+            <h2>Done</h2>
+            <div>
+                {taskList.length > 0 ? (
+                    taskList.map((task) => (
+                        <div key={task._id}>
+                            <h3>{task.title}</h3>
+                            <button onClick={() => openModal(task)}>Edit</button>
+                        </div>
+                    ))
+                ) : (
+                    <p>No tasks in Done</p>
+                )}
+            </div>
         </div>
     );
 };

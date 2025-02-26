@@ -22,6 +22,9 @@ const Navbar = () => {
         <>
             <li><NavLink to="/" className={({ isActive }) => isActive ? "bg-purple-800 text-white px-4 py-2 rounded-md" : "hover:bg-indigo-500 hover:underline px-4 py-2 rounded-md"}>Home</NavLink></li>
             <li><NavLink to="/alltask" className={({ isActive }) => isActive ? "bg-purple-800 text-white px-4 py-2 rounded-md" : "hover:bg-indigo-500 hover:underline px-4 py-2 rounded-md"}>Manage Your Task</NavLink></li>
+            <li><NavLink to="/todo" className={({ isActive }) => isActive ? "bg-purple-800 text-white px-4 py-2 rounded-md" : "hover:bg-indigo-500 hover:underline px-4 py-2 rounded-md"}>ToDo</NavLink></li>
+            <li><NavLink to="/inprogress" className={({ isActive }) => isActive ? "bg-purple-800 text-white px-4 py-2 rounded-md" : "hover:bg-indigo-500 hover:underline px-4 py-2 rounded-md"}>InProgress</NavLink></li>
+            <li><NavLink to="/done" className={({ isActive }) => isActive ? "bg-purple-800 text-white px-4 py-2 rounded-md" : "hover:bg-indigo-500 hover:underline px-4 py-2 rounded-md"}>Done</NavLink></li>
 
 
             {/* {user && user.displayName && (
@@ -93,8 +96,8 @@ const Navbar = () => {
                         </button>
                     ) : (
                         <div className="flex gap-2">
-                            {/* <NavLink to="/register" className="btn bg-purple-900 text-white px-3 py-1">Sign Up</NavLink>
-                            <NavLink to="/login" className="btn bg-purple-900 text-white px-3 py-1">Log In</NavLink> */}
+                            <NavLink to="/register" className="btn bg-purple-900 text-white px-3 py-1">Sign Up</NavLink>
+                            <NavLink to="/login" className="btn bg-purple-900 text-white px-3 py-1">Log In</NavLink>
                         </div>
                     )}
                 </div>
