@@ -1,24 +1,87 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
+import TaskModal from '../Modal/TaskModal';
 
-const InProgress = ({ tasks, openModal }) => {
-    // Check if 'tasks' is an array before filtering
-    const filteredTasks = Array.isArray(tasks) ? tasks.filter((task) => task.category === 'In Progress') : [];
+const InProgress = () => {
+    const [tasks, setTasks] = useState([]);
+    const [showModal, setShowModal] = useState(false);
+    const [selectedTask, setSelectedTask] = useState(null);
+    const categories = ["ToDo", "InProgress", "Done"];
+
+    useEffect(() => {
+        // Fetch tasks from the backend when the component mounts
+        fetch('http://localhost:5000/tasks')
+            .then(response => response.json())
+            .then(data => {
+                setTasks(data.filter(task => task.category === "InProgress"));
+            })
+            .catch(error => {
+                console.error("Error fetching tasks:", error);
+            });
+    }, []);
+
+    const openModal = (task) => {
+        setSelectedTask(task);
+        setShowModal(true);
+    };
+
+    const closeModal = () => {
+        setShowModal(false);
+    };
+
+    const handleUpdateTask = (updatedTask) => {
+        // Update the task in the state immediately after it has been updated in the database
+        setTasks(prevTasks => 
+            prevTasks.map(task => task._id === updatedTask._id ? updatedTask : task)
+        );
+    };
+
+    const handleDeleteTask = (taskId) => {
+        fetch(`http://localhost:5000/tasks/${taskId}`, {
+            method: 'DELETE',
+        })
+            .then(() => {
+                setTasks(prevTasks => prevTasks.filter(task => task._id !== taskId)); // Remove task from state
+            })
+            .catch(error => {
+                console.error("Error deleting task:", error);
+            });
+    };
 
     return (
         <div>
-            <h2>In Progress</h2>
-            <div>
-                {filteredTasks.length > 0 ? (
-                    filteredTasks.map((task) => (
-                        <div key={task._id}>
-                            <h3>{task.title}</h3>
-                            <button onClick={() => openModal(task)}>Edit</button>
+            <h1 className="text-2xl font-bold mb-4">In Progress Tasks</h1>
+            <ul>
+                {tasks.map(task => (
+                    <li key={task._id} className="bg-yellow-400 p-4 m-2 rounded-md">
+                        <h3 className="text-xl">{task.title}</h3>
+                        <p>{task.description}</p>
+                        <p><strong>Due Date:</strong> {task.dueDate}</p>
+                        <div className="flex space-x-2 mt-2">
+                            <button
+                                onClick={() => openModal(task)}
+                                className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
+                            >
+                                Edit
+                            </button>
+                            <button
+                                onClick={() => handleDeleteTask(task._id)}
+                                className="bg-red-500 text-white p-2 rounded-md hover:bg-red-600"
+                            >
+                                Delete
+                            </button>
                         </div>
-                    ))
-                ) : (
-                    <p>No tasks in progress</p>
-                )}
-            </div>
+                    </li>
+                ))}
+            </ul>
+
+            {showModal && selectedTask && (
+                <TaskModal
+                    task={selectedTask}
+                    onClose={closeModal}
+                    onUpdate={handleUpdateTask} // Pass the update function to the modal
+                    categories={categories}
+                />
+            )}
         </div>
     );
 };

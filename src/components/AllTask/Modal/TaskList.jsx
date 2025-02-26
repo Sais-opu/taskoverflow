@@ -51,8 +51,7 @@ const TaskList = () => {
                     task={selectedTask}
                     onClose={closeModal}
                     categories={categories}
-                    onUpdate={handleTaskUpdate}  // Use fetchTasks to refetch tasks
-                    fetchTasks={fetchTasks}  // Pass fetchTasks to the modal for server sync
+                    onUpdate={handleTaskUpdate}  // Use this to trigger fetch after updating task
                 />
             )}
         </div>

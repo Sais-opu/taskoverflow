@@ -1,4 +1,7 @@
-const TaskModal = ({ task, onClose, categories, onUpdate, fetchTasks }) => {
+
+import React, { useState } from 'react';
+
+const TaskModal = ({ task, onClose, categories, onUpdate }) => {
     const [updatedTask, setUpdatedTask] = useState({ ...task });
 
     const handleInputChange = (event) => {
@@ -24,13 +27,12 @@ const TaskModal = ({ task, onClose, categories, onUpdate, fetchTasks }) => {
             },
             body: JSON.stringify(updatedTask),
         })
-            .then((response) => response.json())
-            .then((data) => {
-                // Once the task is updated, refetch tasks based on category
-                fetchTasks(); // Fetch updated tasks from the server
-                onClose(); // Close the modal
+            .then(response => response.json())
+            .then(data => {
+                onUpdate(data);  // Propagate the updated task to the parent to update its state
+                onClose();  // Close the modal after saving
             })
-            .catch((error) => {
+            .catch(error => {
                 console.error("Error editing task:", error);
             });
     };
@@ -114,4 +116,5 @@ const TaskModal = ({ task, onClose, categories, onUpdate, fetchTasks }) => {
         </div>
     );
 };
+
 export default TaskModal;
