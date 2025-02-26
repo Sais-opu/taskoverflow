@@ -70,7 +70,7 @@ const Register = () => {
     const handleGoogleSignIn = async () => {
         try {
             await signInWithGoogle();
-            navigate("/home");
+            navigate("/");
         } catch (error) {
             console.error("Google login failed:", error.message);
         }

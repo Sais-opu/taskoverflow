@@ -22,8 +22,8 @@ const Navbar = () => {
         <>
             <li><NavLink to="/" className={({ isActive }) => isActive ? "bg-purple-800 text-white px-4 py-2 rounded-md" : "hover:bg-indigo-500 hover:underline px-4 py-2 rounded-md"}>Home</NavLink></li>
             <li><NavLink to="/alltask" className={({ isActive }) => isActive ? "bg-purple-800 text-white px-4 py-2 rounded-md" : "hover:bg-indigo-500 hover:underline px-4 py-2 rounded-md"}>Manage Your Task</NavLink></li>
-            
-            
+
+
             {/* {user && user.displayName && (
                 <>
                     <li><NavLink to="/dashboard/addmarathon" className={({ isActive }) => isActive ? "bg-purple-800 text-white px-4 py-2 rounded-md" : "hover:bg-indigo-500 hover:underline px-4 py-2 rounded-md"}>Add Marathon</NavLink></li>
@@ -74,6 +74,7 @@ const Navbar = () => {
                     {/* <button onClick={toggleTheme} className="btn btn-outline px-3 py-1">
                         {theme === "light" ? "🌙 Dark" : "☀️ Light"}
                     </button> */}
+                    
 
                     {/* User Avatar */}
                     {user && user.photoURL && (
