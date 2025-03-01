@@ -1,6 +1,6 @@
 # Task Management Application
 
-A web-based task management application that allows users to create, manage, and track tasks in a flexible and interactive manner. The app includes features like task categorization, drag-and-drop functionality, real-time updates, and authentication.
+A web-based task management application that allows users to create, manage, and track tasks in a flexible and interactive manner. The app includes features like task categorization, real-time updates, and authentication.
 
 ## Features
 
